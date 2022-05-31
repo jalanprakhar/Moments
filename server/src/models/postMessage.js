@@ -7,7 +7,9 @@ const postSchema=mongoose.Schema({
         type:String,
     },
     creator:{
-        String,
+        type:String,
+
+        // required
     },
     tags:{
         type:[String]

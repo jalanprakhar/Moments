@@ -11,4 +11,10 @@ postRouter.get('/',postsController.getPosts)
 
 postRouter.post('/',postsController.createPost);
 
+
+postRouter.patch('/:id',postsController.updatePost);
+postRouter.patch('/:id/likepost',postsController.likePost);
+
+postRouter.delete('/:id',postsController.deletePost);
+
 module.exports= postRouter;
