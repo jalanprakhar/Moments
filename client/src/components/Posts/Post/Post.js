@@ -11,10 +11,7 @@ import { deletePost,likePost } from '../../../actions/posts';
 const Post = ({ post,setCurrentId }) => {
   const classes = useStyles();
   const dispatch=useDispatch();
-  const handleDel=(id)=>{
-
-  
-  }
+ 
   return (
  
       <Card className={classes.card}>
@@ -40,7 +37,7 @@ const Post = ({ post,setCurrentId }) => {
             {post.title}
           </Typography>
         <CardContent>
-          <Typography  variant='body2' gutterBottom>
+          <Typography  variant='body2' color='textSecondary' component='p' gutterBottom>
             {post.message}
           </Typography>
         </CardContent>
