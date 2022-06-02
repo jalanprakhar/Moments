@@ -2,22 +2,23 @@
 const express=require('express');
 require('./db/conn')
 const cors=require('cors');
-const app=express();
+const server=express();
 const port=process.env.PORT || 8000;
 const postRouter=require('./routes/posts.js');
-app.use(express.json(
+const userRouter=require('./routes/user.js');
+server.use(express.json(
     {limit:'200mb'}
 ));
-app.use(cors());
+server.use(cors());
 
 
 
 
-app.use('/posts',postRouter);
+server.use('/posts',postRouter);
+
+server.use('/user',userRouter);
 
 
-
-
-app.listen(port,()=>{
+server.listen(port,()=>{
     console.log('Listening');
 })

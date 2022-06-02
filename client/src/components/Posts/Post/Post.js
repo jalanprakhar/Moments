@@ -2,9 +2,9 @@ import React from 'react'
 import useStyles from './styles';
 import { Card, CardActions, CardMedia, Button, Typography, CardContent } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
-import DeleteIcon from '@mui/icons-material/Delete';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import DeleteIcon from '@material-ui/icons/Delete';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
 import { deletePost,likePost } from '../../../actions/posts';

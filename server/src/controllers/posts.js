@@ -40,12 +40,27 @@ const postsController={
     },
     likePost:async(req,res)=>{
         
-        const {id:_id}=req.params;
-        // const post=req.body;
-        if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No such post with that id');
+        const {id}=req.params;
+        if(!req.userId) return res.json({message:"Unauthenticated"});
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No such post with that id');
 
-        const postt=await PostMessage.findById(_id);
-        const updated=await PostMessage.findByIdAndUpdate(_id,{likeCount:postt.likeCount+1},{new:true});
+        const postt=await PostMessage.findById(id);
+
+        const index=post.likes.findIndex((id)=>id===String(req.userId));
+
+        if(index===-1){
+            //like the post
+            post.likes.push(req.userId);
+
+        }else{
+            //dislike
+            post.likes=post.likes.filter((id)=>id!==String(req.userId))
+        }
+
+
+        const updated=await PostMessage.findByIdAndUpdate(id,post,{new:true});
+
+        res.json(updated);
     }
 }
 module.exports=postsController;

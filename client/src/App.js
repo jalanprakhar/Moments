@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Grow, Grid } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 
-import Navbar from './components/Navbar/Navbar';import ReactDOM from "react-dom/client";
+import Navbar from './components/Navbar/Navbar';
 import {
   BrowserRouter,
   Routes,

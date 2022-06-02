@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import {Container,Grow,Grid} from '@material-ui/core';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
-import useStyles from './styles';
+import useStyles from '../../styles';
 import { useDispatch } from 'react-redux';
 import { getPosts } from '../../actions/posts';
 function Home() {
-    console.log('HIII');
+    // console.log('HIII');
     const classes=useStyles();
     const [currentId,setCurrentId]=useState(null);
 

@@ -1,7 +1,7 @@
 const express=require('express');
 const postRouter=express.Router();
 const postsController=require('../controllers/posts.js');
-
+const auth=require('../middleware/auth.js');
 //http://localhost:8000/posts
 
 
@@ -9,12 +9,12 @@ const postsController=require('../controllers/posts.js');
 postRouter.get('/',postsController.getPosts)
 
 
-postRouter.post('/',postsController.createPost);
+postRouter.post('/',auth,postsController.createPost);
 
 
-postRouter.patch('/:id',postsController.updatePost);
-postRouter.patch('/:id/likepost',postsController.likePost);
+postRouter.patch('/:id',auth,postsController.updatePost);
+postRouter.patch('/:id/likepost',auth,postsController.likePost);
 
-postRouter.delete('/:id',postsController.deletePost);
+postRouter.delete('/:id',auth,postsController.deletePost);
 
 module.exports= postRouter;
