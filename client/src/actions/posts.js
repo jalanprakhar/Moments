@@ -1,5 +1,5 @@
 import * as api from '../api';
-import { FETCH_ALL,CREATE,UPDATE,DELETE,LIKE } from '../constants/actionTypes';
+import { FETCH_ALL,CREATE,UPDATE,DELETE } from '../constants/actionTypes';
 
 //action Creators
 //thunk is used here
@@ -39,12 +39,4 @@ export const deletePost=(id)=>async(dispatch)=>{
     console.log(e);
   }
 }
-export const likePost=(id)=>async(dispatch)=>{
-  try{
-    const {data}=await api.likePost(id);
-    console.log(data);
-    dispatch({type:LIKE,payload:data});
-  }catch(e){
-    console.log(e);
-  }
-}
+

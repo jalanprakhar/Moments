@@ -6,6 +6,7 @@ import useStyles from '../../styles';
 import { useDispatch } from 'react-redux';
 import { getPosts } from '../../actions/posts';
 function Home() {
+  // window.location.reload(true);
     // console.log('HIII');
     const classes=useStyles();
     const [currentId,setCurrentId]=useState(null);
@@ -13,6 +14,7 @@ function Home() {
     const dispatch=useDispatch();
     useEffect(()=>{
       dispatch(getPosts());
+      // window.location.reload(true)
     },[dispatch,currentId]);
   return (
     <Grow in>

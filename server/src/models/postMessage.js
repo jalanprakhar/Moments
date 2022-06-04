@@ -11,15 +11,12 @@ const postSchema=mongoose.Schema({
 
         // required
     },
+    name:String,
     tags:{
         type:[String]
     },
     selectedFile:{
         type:String,
-    },
-    likes:{
-        type:[String],
-        default:[],
     },
     createdAt:{
         type:Date,

@@ -13,7 +13,6 @@ postRouter.post('/',auth,postsController.createPost);
 
 
 postRouter.patch('/:id',auth,postsController.updatePost);
-postRouter.patch('/:id/likepost',auth,postsController.likePost);
 
 postRouter.delete('/:id',auth,postsController.deletePost);
 
